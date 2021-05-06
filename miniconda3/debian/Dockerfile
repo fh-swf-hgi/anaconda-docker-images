@@ -28,7 +28,7 @@ CMD [ "/bin/bash" ]
 ARG CONDA_VERSION=py38_4.9.2
 ARG CONDA_MD5=122c8c9beb51e124ab32a0fa6426c656
 
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh -O miniconda.sh && \
+RUN wget --quiet http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh -O miniconda.sh && \
     echo "${CONDA_MD5}  miniconda.sh" > miniconda.md5 && \
     if ! md5sum --status -c miniconda.md5; then exit 1; fi && \
     mkdir -p /opt && \
